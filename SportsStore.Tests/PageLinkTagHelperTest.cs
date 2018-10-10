@@ -28,7 +28,7 @@ namespace SportsStore.Tests
             urlHeplerFactory.Setup(f => f.GetUrlHelper(It.IsAny<ActionContext>()))
                 .Returns(urlHelper.Object);
 
-            PageLinkHelper pageLinkHelper = new PageLinkHelper(urlHeplerFactory.Object)
+            PageLinkTagHelper pageLinkHelper = new PageLinkTagHelper(urlHeplerFactory.Object)
             {
                 PageModel = new PagingInfo
                 {
