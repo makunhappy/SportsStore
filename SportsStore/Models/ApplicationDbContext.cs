@@ -15,5 +15,6 @@ namespace SportsStore.Models
 
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
