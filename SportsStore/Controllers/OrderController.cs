@@ -17,7 +17,10 @@ namespace SportsStore.Controllers
             repository = repoService;
             cart = cartService;
         }
-        public ViewResult List => View(repository.Orders.Where(p => !p.Shipped));
+        public ViewResult List()
+        {
+            return View(repository.Orders.Where(p => !p.Shipped));
+        }
         [HttpPost]
         public IActionResult MarkShipped(int orderID)
         {
