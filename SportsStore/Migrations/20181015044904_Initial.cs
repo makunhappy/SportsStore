@@ -13,7 +13,8 @@ namespace SportsStore.Migrations
                 {
                     OrderID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: false),
+                    Shipped = table.Column<bool>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     Line1 = table.Column<string>(nullable: false),
                     Line2 = table.Column<string>(nullable: true),
                     Line3 = table.Column<string>(nullable: true),
