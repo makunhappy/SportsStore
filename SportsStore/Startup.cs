@@ -46,13 +46,17 @@ namespace SportsStore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
 
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync("Hello World!");
             //});
-            app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
             app.UseAuthentication();
@@ -93,8 +97,8 @@ namespace SportsStore
                     name: "default",
                     template: "{controller=Product}/{action=List}/{id?}");
             });
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
